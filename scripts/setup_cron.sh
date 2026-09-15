@@ -15,11 +15,12 @@ if hermes cron list 2>/dev/null | grep -q "$JOB_NAME"; then
 fi
 
 PROMPT="$(cat cron/prompt.md)"
+WORKDIR="$(cygpath -w "$(pwd)")"   # MSYS path (/c/...) is rejected — Hermes wants C:\...
 hermes cron create "$SCHEDULE" "$PROMPT" \
   --name "$JOB_NAME" \
   --model meituan/longcat-2.0 \
   --provider nous \
-  --workdir "$(pwd)"
+  --workdir "$WORKDIR"
 
 echo
 echo "Created '$JOB_NAME' (schedule: $SCHEDULE, model: meituan/longcat-2.0)."
