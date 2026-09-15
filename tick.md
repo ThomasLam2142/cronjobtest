@@ -9,6 +9,7 @@ next tick runs your new instructions.** That is the whole concept.
 1. Run `date -u` and note the UTC time.
 2. Run `git log -1 --oneline` and note the latest commit hash and message.
 3. Say whether the pull step (STEP 1) fetched new changes or was already up to date.
-4. Write a 3-line summary of the above to `output/last_run.md` (create the
+4. List the files in this repo (`ls -R`), excluding `.git` and `output/`.
+5. Write a 4-line summary of the above to `output/last_run.md` (create the
    folder if needed). `output/` is gitignored — never commit it.
-5. Reply with the same summary. Keep it short.
+6. Reply with the same summary. Keep it short.
